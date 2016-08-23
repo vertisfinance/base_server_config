@@ -32,3 +32,4 @@ set ls=2
 colorscheme molokai' > /etc/skel/.vimrc"
 sudo rm -rf /etc/skel/.vim
 sudo git clone https://github.com/vertisfinance/molokai.git /etc/skel/.vim/
+sudo curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose | sudo tee /etc/bash_completion.d/docker-compose
