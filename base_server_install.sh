@@ -22,6 +22,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set paste
 syntax on
 set t_Co=256
 filetype on
