@@ -23,6 +23,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set paste
+set noswapfile
 syntax on
 set t_Co=256
 filetype on
