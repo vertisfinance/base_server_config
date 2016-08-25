@@ -24,6 +24,8 @@ set softtabstop=4
 set expandtab
 set paste
 set noswapfile
+set nobackup
+set nowritebackup
 syntax on
 set t_Co=256
 filetype on
