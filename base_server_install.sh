@@ -3,13 +3,13 @@ apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E8
 echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" > /etc/apt/sources.list.d/docker.list
 apt-get update -y
 apt-get upgrade -y
-apt-get install -y docker-engine
+apt-get install -y docker-engine glances
 pip install docker-compose
 mkdir -p /etc/skel/
 sh -c "echo 'alias dc=docker-compose
-alias d=docker' > /etc/skel/.bash_aliases"
+alias d=docker' > /etc/skel/.bash_alias"
 sh -c "echo 'alias dc=docker-compose
-alias d=docker' > ~/.bash_aliases"
+alias d=docker' > ~/.bash_alias"
 mkdir -p /etc/skel/.ssh
 mkdir -p ~/.ssh
 chmod 700 /etc/skel/.ssh
