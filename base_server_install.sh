@@ -7,9 +7,9 @@ apt-get install -y docker-engine glances
 pip install docker-compose
 mkdir -p /etc/skel/
 sh -c "echo 'alias dc=docker-compose
-alias d=docker' > /etc/skel/.bash_alias"
+alias d=docker' > /etc/skel/.bash_aliases"
 sh -c "echo 'alias dc=docker-compose
-alias d=docker' > ~/.bash_alias"
+alias d=docker' > ~/.bash_aliases"
 mkdir -p /etc/skel/.ssh
 mkdir -p ~/.ssh
 chmod 700 /etc/skel/.ssh
