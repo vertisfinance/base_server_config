@@ -112,8 +112,8 @@ fi
 read -p "modify sshd config? (yN): " yn
 if [[ $(echo ${yn,} | cut -c 1) = 'y' ]]; then
   cat /etc/ssh/sshd_config | \
-  sed 's/#\?\(PasswordAuthentication\) .*/\1 no/' | \
-  sed 's/#\?\(PermitRootLogin\) .*/\1 no/' > /tmp/sshd_config
+  sed 's/^#\?\(PasswordAuthentication\) .*/\1 no/' | \
+  sed 's/^#\?\(PermitRootLogin\) .*/\1 no/' > /tmp/sshd_config
   cat /tmp/sshd_config > /etc/ssh/sshd_config
   rm /tmp/sshd_config
 fi
