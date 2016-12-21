@@ -89,7 +89,7 @@ curl -L $url -o /etc/bash_completion.d/docker-compose
 # default user
 read -er -p 'administrator username (enter to skip): ' username
 if [[ -n $username ]]; then
-  if [[ $(id -u rbann 2>/dev/null | wc -m) = 0 ]]; then
+  if [[ $(id -u $username 2>/dev/null | wc -m) = 0 ]]; then
     adduser $username
   else
     echo "user $username already exists"
