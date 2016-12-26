@@ -45,46 +45,19 @@ touch /etc/skel/.ssh/authorized_keys
 chmod 600 /etc/skel/.ssh/authorized_keys
 
 # vim
-echo 'set nocompatible
-set autoindent
-set backup
-set nu
-set smartindent
-set showmatch
-set textwidth=80
-set title
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set paste
-set noswapfile
-set nobackup
-set nowritebackup
-syntax on
-set t_Co=256
-filetype on
-filetype indent on
-filetype plugin on
-set modeline
-set ls=2
-colorscheme molokai' > /etc/skel/.vimrc
-git clone https://github.com/vertisfinance/molokai.git /etc/skel/.vim
+vimrc_url=https://raw.githubusercontent.com/wklken/vim-for-server/master/vimrc
+curl $vimrc_url > /etc/skel/.vimrc
 
 # prompt
 git clone https://github.com/richardbann/gitprompt.git /etc/skel/gitprompt
-echo 'complete -F _docker_compose dc' >> /etc/skel/.bashrc
-echo 'set_bash_prompt(){
-    PS1="$(python ~/gitprompt/prompt.py)"
-}
-
-PROMPT_COMMAND=set_bash_prompt' >> /etc/skel/.bashrc
+cat /etc/skel/gitprompt/bashrc >> /etc/skel/.bashrc
 
 # bash completion
 dcv=$(docker-compose version --short)
 url=https://raw.githubusercontent.com/docker/compose/$dcv
 url=$url/contrib/completion/bash/docker-compose
 curl -L $url -o /etc/bash_completion.d/docker-compose
+echo 'complete -F _docker_compose dc' >> /etc/skel/.bashrc
 
 # default user
 read -er -p "administrator username (enter to skip): " username
