@@ -45,8 +45,10 @@ touch /etc/skel/.ssh/authorized_keys
 chmod 600 /etc/skel/.ssh/authorized_keys
 
 # vim
-vimrc_url=https://raw.githubusercontent.com/wklken/vim-for-server/master/vimrc
+vimrc_url=https://raw.githubusercontent.com/vertisfinance
+vimrc_url=$vimrc_url/server-vim/master/vimrc
 curl $vimrc_url > /etc/skel/.vimrc
+git clone https://github.com/vertisfinance/molokai.git /etc/skel/.vim
 
 # prompt
 git clone https://github.com/richardbann/gitprompt.git /etc/skel/gitprompt
