@@ -10,7 +10,7 @@ export LC_ALL="en_US.utf8"
 # update and some useful packages
 apt-get update
 apt-get upgrade -y
-apt-get install -y ntp ntpstat vim git python-pip glances
+apt-get install -y vim git python-pip glances
 pip install pip --upgrade
 
 # fix locale issue forever
