@@ -10,8 +10,8 @@ export LC_ALL="en_US.utf8"
 # update and some useful packages
 apt-get update
 apt-get upgrade -y
-apt-get install -y vim git python-pip glances
-pip install pip --upgrade
+apt-get install -y vim git python3-pip glances
+pip3 install pip --upgrade
 
 # fix locale issue forever
 if [[ $(wc -l < /etc/environment) = 1 ]]; then
@@ -28,8 +28,17 @@ if [[ ! -f /etc/apt/sources.list.d/docker.list ]]; then
 fi
 
 apt-get update
-apt-get install -y docker-engine
-pip install docker-compose
+apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+    
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+apt-key fingerprint 0EBFCD88
+
+pip3 install docker-compose
 
 # skeleton for new users
 rm -rf /etc/skel/.ssh /etc/skel/.vim /etc/skel/gitprompt
